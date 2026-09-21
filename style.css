@@ -1,15 +1,17 @@
 * {
-    font-family: "JetBrainsMono Nerd Font", "Noto Sans CJK JP", sans-serif;
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font", "Noto Sans CJK JP", monospace;
     font-size: 13px;
     font-weight: bold;
     min-height: 0;
 }
 
 window#waybar {
-    background-color: transparent;
+    background: transparent;
 }
 
-/* Semi-transparent abyss-teal capsules */
+/* Translucent Glass Pills (45% opacity) */
 #workspaces,
 #window,
 #custom-media,
@@ -18,61 +20,82 @@ window#waybar {
 #cpu,
 #clock,
 #tray {
-    background-color: rgba(18, 46, 44, 0.75);
-    color: #c7f8ee;
-    border: 1px solid rgba(135, 230, 215, 0.32);
+    background: rgba(14, 26, 20, 0.45);
+    color: #e2f1e8;
+    padding: 3px 13px;
+    margin: 3px 4px;
     border-radius: 12px;
-    padding: 3px 12px;
-    margin: 4px 2px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    border: 1px solid rgba(134, 239, 172, 0.18);
+    transition: all 0.15s ease-in-out;
+}
+
+/* Base Accent Colors */
+#custom-media {
+    color: #bef264;
+}
+
+#pulseaudio {
+    color: #fde047;
+}
+
+#pulseaudio.muted {
+    color: #f87171;
+}
+
+#memory {
+    color: #cbd5e1;
+}
+
+#cpu {
+    color: #fb923c;
+}
+
+#clock {
+    color: #facc15;
+}
+
+#window {
+    color: #67e8f9;
+    background: rgba(14, 26, 20, 0.35);
 }
 
 /* Workspaces */
-#workspaces button {
-    padding: 0 6px;
-    color: #87e6d7;
-    background-color: transparent;
-    border-radius: 8px;
-    transition: all 0.2s ease;
+#workspaces {
+    padding: 0px 4px;
 }
 
-#workspaces button.active {
-    background-color: rgba(40, 114, 107, 0.95);
-    color: #ffe082;
-    border: 1px solid rgba(255, 224, 130, 0.6);
+#workspaces button {
+    padding: 3px 8px;
+    color: #739e82;
+    background: transparent;
+    border-radius: 9px;
+    transition: all 0.15s ease;
 }
 
 #workspaces button:hover {
-    background-color: rgba(56, 142, 134, 0.6);
-    color: #ffffff;
+    color: #22d3ee;
+    background: rgba(34, 211, 238, 0.2);
 }
 
-/* Base Music Pill */
-#custom-media {
-    color: #b4befe;
-    border-color: rgba(180, 190, 254, 0.35);
+#workspaces button.active {
+    color: #083344;
+    background: #22d3ee;
 }
 
-/* Abyss Bioluminescent Hover: Dual-tone radial gradient shimmer */
-#custom-media:hover {
-    background-color: rgba(24, 68, 64, 0.92);
-    color: #ffffff;
-    border: 1px solid rgba(180, 230, 255, 0.85);
-    box-shadow: 0 0 14px rgba(135, 230, 215, 0.6), inset 0 0 8px rgba(180, 190, 254, 0.3);
-}
-
-/* Other Module Hover & Accent Colors */
+/* Universal Teal Hover and Outer Glow */
+#workspaces:hover,
+#window:hover,
+#custom-media:hover,
 #pulseaudio:hover,
 #memory:hover,
 #cpu:hover,
-#clock:hover {
-    background-color: rgba(28, 68, 64, 0.85);
-    border-color: rgba(135, 230, 215, 0.55);
+#clock:hover,
+#tray:hover {
+    background: rgba(18, 55, 48, 0.85);
+    border-color: #22d3ee;
+    box-shadow: 0 0 10px 2px rgba(34, 211, 238, 0.55);
 }
 
-#pulseaudio { color: #a6e3a1; }
-#memory { color: #89dceb; }
-#cpu { color: #fab387; }
-#clock { color: #cdd6f4; }
-#pulseaudio.muted { color: #f38ba8; }
+#tray {
+    padding: 3px 10px;
+}
