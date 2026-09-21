@@ -1,0 +1,96 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font", "Noto Sans", sans-serif;
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: transparent;
+}
+
+#workspaces,
+#window,
+#pulseaudio,
+#memory,
+#cpu,
+#clock,
+#tray {
+    background-color: rgba(26, 27, 38, 0.85);
+    color: #c0caf5;
+    padding: 4px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(122, 162, 247, 0.25);
+}
+
+#workspaces {
+    padding: 2px 6px;
+}
+
+#workspaces button {
+    padding: 2px 8px;
+    margin: 2px 3px;
+    border-radius: 8px;
+    color: #787c99;
+    background-color: transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+#workspaces button.active {
+    color: #1a1b26;
+    background-color: #7aa2f7;
+    font-weight: bold;
+}
+
+#workspaces button.urgent {
+    color: #1a1b26;
+    background-color: #f7768e;
+}
+
+#workspaces button:hover {
+    background-color: rgba(122, 162, 247, 0.2);
+    color: #c0caf5;
+}
+
+#window {
+    color: #7dcfff;
+    font-weight: 500;
+}
+
+#pulseaudio {
+    color: #bb9af7;
+    border-color: rgba(187, 154, 247, 0.25);
+}
+
+#pulseaudio.muted {
+    color: #565f89;
+    border-color: rgba(86, 95, 137, 0.3);
+}
+
+#memory {
+    color: #9ece6a;
+    border-color: rgba(158, 206, 106, 0.25);
+}
+
+#cpu {
+    color: #e0af68;
+    border-color: rgba(224, 175, 104, 0.25);
+}
+
+#clock {
+    color: #7aa2f7;
+    border-color: rgba(122, 162, 247, 0.35);
+    font-weight: bold;
+}
+
+#tray {
+    padding: 4px 10px;
+}
+
+/* Hide window title pill completely when nothing is focused */
+window#waybar.empty #window {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
