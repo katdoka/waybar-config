@@ -23,11 +23,11 @@
         "format": "󰎆 {}",
         "max-length": 32,
         "interval": 2,
-        "exec": "playerctl metadata --format '{{artist}} - {{title}}' 2>/dev/null || echo ''",
+        "exec": "playerctl --player=spotify,%any metadata --format '{{artist}} - {{title}}' 2>/dev/null || echo ''",
         "on-click": "hyprctl dispatch 'hl.dsp.workspace.toggle_special(\"music\")'",
-        "on-click-middle": "playerctl play-pause",
-        "on-scroll-up": "playerctl next",
-        "on-scroll-down": "playerctl previous"
+        "on-click-middle": "playerctl --player=spotify,%any play-pause",
+        "on-scroll-up": "playerctl --player=spotify,%any next",
+        "on-scroll-down": "playerctl --player=spotify,%any previous"
     },
     "pulseaudio": {
         "format": "{icon} {volume}%",
@@ -47,6 +47,7 @@
         "format": " {usage}%"
     },
     "clock": {
+        "timezone": "America/New_York",
         "format": " {:%I:%M %p}",
         "format-alt": "󰃭 {:%A, %B %d, %Y (%R)}",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
