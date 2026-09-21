@@ -18,13 +18,14 @@ window#waybar {
 #cpu,
 #clock,
 #tray {
-    background-color: rgba(18, 46, 44, 0.72);
+    background-color: rgba(18, 46, 44, 0.75);
     color: #c7f8ee;
     border: 1px solid rgba(135, 230, 215, 0.32);
     border-radius: 12px;
     padding: 3px 12px;
     margin: 4px 2px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 /* Workspaces */
@@ -33,6 +34,7 @@ window#waybar {
     color: #87e6d7;
     background-color: transparent;
     border-radius: 8px;
+    transition: all 0.2s ease;
 }
 
 #workspaces button.active {
@@ -46,29 +48,31 @@ window#waybar {
     color: #ffffff;
 }
 
-/* Music player pill accent */
+/* Base Music Pill */
 #custom-media {
     color: #b4befe;
     border-color: rgba(180, 190, 254, 0.35);
 }
 
-/* Module accent colors */
-#pulseaudio {
-    color: #a6e3a1;
+/* Abyss Bioluminescent Hover: Dual-tone radial gradient shimmer */
+#custom-media:hover {
+    background-color: rgba(24, 68, 64, 0.92);
+    color: #ffffff;
+    border: 1px solid rgba(180, 230, 255, 0.85);
+    box-shadow: 0 0 14px rgba(135, 230, 215, 0.6), inset 0 0 8px rgba(180, 190, 254, 0.3);
 }
 
-#memory {
-    color: #89dceb;
+/* Other Module Hover & Accent Colors */
+#pulseaudio:hover,
+#memory:hover,
+#cpu:hover,
+#clock:hover {
+    background-color: rgba(28, 68, 64, 0.85);
+    border-color: rgba(135, 230, 215, 0.55);
 }
 
-#cpu {
-    color: #fab387;
-}
-
-#clock {
-    color: #cdd6f4;
-}
-
-#pulseaudio.muted {
-    color: #f38ba8;
-}
+#pulseaudio { color: #a6e3a1; }
+#memory { color: #89dceb; }
+#cpu { color: #fab387; }
+#clock { color: #cdd6f4; }
+#pulseaudio.muted { color: #f38ba8; }
