@@ -12,6 +12,7 @@ window#waybar {
 /* Semi-transparent abyss-teal capsules */
 #workspaces,
 #window,
+#custom-media,
 #pulseaudio,
 #memory,
 #cpu,
@@ -45,7 +46,13 @@ window#waybar {
     color: #ffffff;
 }
 
-/* Accent colors for module icons */
+/* Music player pill accent */
+#custom-media {
+    color: #b4befe;
+    border-color: rgba(180, 190, 254, 0.35);
+}
+
+/* Module accent colors */
 #pulseaudio {
     color: #a6e3a1;
 }

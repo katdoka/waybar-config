@@ -7,7 +7,7 @@
     "spacing": 8,
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["pulseaudio", "memory", "cpu", "clock", "tray"],
+    "modules-right": ["custom/media", "pulseaudio", "memory", "cpu", "clock", "tray"],
 
     "hyprland/workspaces": {
         "format": "{name}",
@@ -18,6 +18,15 @@
         "format": "󰍹  {title}",
         "max-length": 45,
         "separate-outputs": true
+    },
+    "custom/media": {
+        "format": "󰎆 {}",
+        "max-length": 32,
+        "interval": 2,
+        "exec": "playerctl metadata --format '{{artist}} - {{title}}' 2>/dev/null || echo ''",
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous"
     },
     "pulseaudio": {
         "format": "{icon} {volume}%",
